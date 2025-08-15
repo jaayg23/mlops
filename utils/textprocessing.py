@@ -23,13 +23,13 @@ class TextProcessing:
     def __init__(self, language: str):
         """This class is used to process the text
         Class parameters:
-            lenguage (str): Language of the text to process
+            language (str): Language of the text to process
         """
         logging.basicConfig(level=logging.INFO)
         self.logger = logging.getLogger(__name__)
 
         nltk.download("averaged_perceptron_tagger")
-        self.lenguage = language
+        self.language = language
         self.stop_words = set(stopwords.words(self.language))
         self.stemmer = SnowballStemmer(self.language)
 

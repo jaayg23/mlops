@@ -21,7 +21,6 @@ from feature_extraction import FeatureExtraction
 from text_processing import TextProcessing
 
 
-
 warnings.filterwarnings("ignore")
 
 
@@ -52,7 +51,7 @@ def feature_extraction_task(data_path_processed: str,
         None"""
     feature_extraction_processor = FeatureExtraction()
     feature_extraction_processor.run(data_path_processed=data_path_processed, 
-                                     data_version = VERSION)
+                                     data_version=VERSION)
 
 @task(retries=3, retry_delay_seconds=2,
       name="Data transformation task", 
@@ -98,6 +97,7 @@ def training_best_model(
     model_name: str,
 ):
     with mlflow.start_run(run_name=model_name):
+        mlflow.set_tracking_uri("http://127.0.0.1:5000")
         mlflow.set_tag("developer", DEVELOPER_NAME)
         mlflow.set_tag("model_name", MODEL_NAME)
         mlflow.log_params(params)

@@ -1,7 +1,7 @@
 """This config module contains the configuration for the pipeline with prefect"""
 
 # path with data processed
-DATA_PATH_PROCESSED = "C:\Users\jaayg\OneDrive\Escritorio\proyectos\Mlops-platzi\orchestration\data\data_processed"
+DATA_PATH_PROCESSED = "C:/Users/jaayg/OneDrive/Escritorio/proyectos/Mlops-platzi/orchestration/data/data_processed"
 # version of the data
 VERSION = 2
 # language for the input parameter for the text processing class
